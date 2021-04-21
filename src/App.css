@@ -7,10 +7,23 @@
   pointer-events: none;
 }
 
+.appContainer{
+  display: flex;
+  margin-top: 200px;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+ul.autoCompleteOptionsList {
+  list-style-type: none;
+  padding: 10px;
+  width: 100%;
 }
 
 .App-header {
@@ -22,6 +35,20 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.listItemClass {
+  padding: 10px;
+
+}
+
+.activeListItemClass{
+  padding: 10px;
+  background: sandybrown;
+}
+
+.listItemClass:hover {
+  background: rgba(237, 158, 99, 0.44);
 }
 
 .App-link {

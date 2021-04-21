@@ -1,25 +1,48 @@
-import logo from './logo.svg';
+import React, {useEffect, useState} from "react";
 import './App.css';
+import AutoComplete from "./components/AutoComplete";
+import {fetchNameAutoComplete} from "./services/api";
+import AutoCompleteOption from "./components/AutoCompleteOptions";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [namesDataSource, setNamesDataSource] = useState([]);
+    const [autocompleteValue, setAutoCompleteValue] = useState('');
+
+    function getAutoCompleteDataSource(searchText) {
+        setAutoCompleteValue(searchText);
+        fetchNameAutoComplete(searchText).then(response => {
+            const {info, results = []} = response;
+            setNamesDataSource(results);
+        }).catch(e => {
+            console.log('error', e);
+            setNamesDataSource([]);
+        })
+    }
+
+    function handleSelectOption(fullDetailsObj) {
+        const { name } = fullDetailsObj;
+        setAutoCompleteValue(name);
+    }
+
+    return (
+        <div className="appContainer">
+            <AutoComplete
+                inputStyles={{
+                    padding: 10,
+                    width: '100%'
+                }}
+                placeholder='Search'
+                width='50%'
+                onSearchChange={getAutoCompleteDataSource}
+                onSelect={handleSelectOption}
+                value={autocompleteValue}
+                dataSource={namesDataSource}
+                uniqueKey='id'
+                displayKey='name'
+             />
+        </div>
+    );
 }
 
 export default App;
