@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/AutoComplete/static/css/main.682ee585.chunk.css",
+    "main.js": "/AutoComplete/static/js/main.bf264b24.chunk.js",
+    "main.js.map": "/AutoComplete/static/js/main.bf264b24.chunk.js.map",
+    "runtime-main.js": "/AutoComplete/static/js/runtime-main.f9dca42f.js",
+    "runtime-main.js.map": "/AutoComplete/static/js/runtime-main.f9dca42f.js.map",
+    "static/js/2.c4727012.chunk.js": "/AutoComplete/static/js/2.c4727012.chunk.js",
+    "static/js/2.c4727012.chunk.js.map": "/AutoComplete/static/js/2.c4727012.chunk.js.map",
+    "static/js/3.a54141e8.chunk.js": "/AutoComplete/static/js/3.a54141e8.chunk.js",
+    "static/js/3.a54141e8.chunk.js.map": "/AutoComplete/static/js/3.a54141e8.chunk.js.map",
+    "index.html": "/AutoComplete/index.html",
+    "static/css/main.682ee585.chunk.css.map": "/AutoComplete/static/css/main.682ee585.chunk.css.map",
+    "static/js/2.c4727012.chunk.js.LICENSE.txt": "/AutoComplete/static/js/2.c4727012.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f9dca42f.js",
+    "static/js/2.c4727012.chunk.js",
+    "static/css/main.682ee585.chunk.css",
+    "static/js/main.bf264b24.chunk.js"
+  ]
+}
