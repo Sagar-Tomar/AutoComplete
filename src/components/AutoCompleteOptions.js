@@ -1,12 +1,27 @@
 import React from 'react';
 
 class AutoCompleteOption extends React.Component {
+    constructor(props){
+        super(props);
+        this.handleClick = this.handleClick.bind(this);
+
+    }
+
+    handleClick() {
+        const { item,onSelection } = this.props;
+        if(Object.keys(item).length && typeof onSelection === 'function'){
+            onSelection(item);
+        }
+
+    }
+
     render() {
-        const { listItemClass, children} = this.props;
+        const { listItemClass, children, item} = this.props;
         return (
             <li
-                className={listItemClass}
                 {...this.props}
+                onClick={this.handleClick}
+                className={listItemClass}
             >
 
                 {children}

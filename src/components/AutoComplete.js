@@ -62,6 +62,7 @@ class AutoComplete extends React.Component {
     }
 
     handleAutoCompleteOptionClicked(fullObj) {
+        console.log('optionClicked', fullObj);
         const {onSelect} = this.props;
         if (onSelect && typeof onSelect === 'function') {
             onSelect(fullObj);
@@ -95,7 +96,7 @@ class AutoComplete extends React.Component {
                                 listItemClass = "activeListItemClass"
                             }
                             return (
-                               <AutoCompleteOption className={listItemClass} key={item[uniqueKey]} onClick={(item) =>  this.handleAutoCompleteOptionClicked(item)} >
+                               <AutoCompleteOption listItemClass={listItemClass} key={item[uniqueKey]} item={item} onSelection={this.handleAutoCompleteOptionClicked}>
                                    {item[displayKey]}
                                </AutoCompleteOption>
 
